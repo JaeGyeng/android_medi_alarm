@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jaegyengjo.medicine_alarm">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/iconmain"
+        android:label="약 드세요!"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".Main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.example.jaegyengjo.medicine_alarm.Alarm.AlarmActivity"
+            android:label="새로운 약 설정" >
+
+        </activity>
+
+        <activity
+            android:name=".Alarm.preferences.AlarmPreferencesActivity"
+            android:label="예약설정"
+
+            android:parentActivityName="com.example.jaegyengjo.medicine_alarm.Alarm.AlarmActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jaegyengjo.medicine_alarm.Alarm.AlarmActivity" />
+        </activity>
+
+        <activity
+            android:name = ".Alarm.alert.AlarmAlertActivity"
+            android:label="새로운 약 설정"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity android:name=".Info.InfoActivity"/>
+        <activity android:name=".Info.inputInfo"/>
+
+
+
+
+        <service
+            android:process="com.example.jaegyengjo.medicine_alarm.alarm.serviceProcess"
+            android:name=".Alarm.service.AlarmService"
+            android:label="@string/app_name"/>
+
+        <receiver android:name=".Main.BroadcastD"></receiver>
+
+        <receiver android:name=".Alarm.service.AlarmServiceBroadcastReciever" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".Alarm.alert.AlarmAlertBroadcastReciever" >
+        </receiver>
+
+    </application>
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
+</manifest>

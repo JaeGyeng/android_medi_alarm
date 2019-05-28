@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jaegyengjo.medicine_alarm.Main.MainActivity"
+    android:background="@drawable/background">
+
+
+    <Button
+        android:layout_width="114dp"
+        android:layout_height="110dp"
+        android:id="@+id/newMedic"
+        android:background="@drawable/newicon"
+        android:layout_row="4"
+        android:layout_column="3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="135dp"
+        android:layout_height="92dp"
+        android:id="@+id/medicInfo"
+        android:background="@drawable/infoicon"
+        android:layout_row="4"
+        android:layout_column="1"
+        android:layout_alignTop="@+id/newMedic"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="3"
+        android:background="@drawable/stopicon"
+
+        android:layout_alignBaseline="@+id/medicInfo"
+        android:layout_alignBottom="@+id/medicInfo"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+
+        android:id="@+id/btnAlarm1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/android_cure"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
